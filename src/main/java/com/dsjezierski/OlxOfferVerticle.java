@@ -71,9 +71,9 @@ public class OlxOfferVerticle extends AbstractVerticle {
     }
 
     private void getOffers(RoutingContext routingContext) {
-        String id = routingContext.request().getParam("id");
+        String keyword = routingContext.request().getParam("keyword");
         HttpRequest<String> request = WebClient.create(vertx)
-                .get(443, "olx.pl", "/oferty/q-" + id)
+                .get(443, "olx.pl", "/oferty/q-" + keyword)
                 .ssl(true)  // (3)
                 .putHeader("Accept", "application/json")
                 .as(BodyCodec.string())
