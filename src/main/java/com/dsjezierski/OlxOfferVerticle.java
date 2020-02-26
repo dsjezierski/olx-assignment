@@ -29,7 +29,7 @@ public class OlxOfferVerticle extends AbstractVerticle {
     }
 
     private void createRoutes(Router router) {
-        router.get("/olx/offers").handler(this::getOffers);
+        router.get("/offers/olx").handler(this::getOffers);
     }
 
     private void createServer(Future<Void> fut, Router router) {
